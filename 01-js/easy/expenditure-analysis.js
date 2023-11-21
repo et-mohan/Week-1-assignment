@@ -9,7 +9,44 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
-}
+  arr=[]
+  
+  const categoryTotals = {};
 
+  for (const transaction of transactions) {
+    const { category, price } = transaction;
+
+    // Check if the category already exists in the totals
+    if (categoryTotals.hasOwnProperty(category)) {
+      categoryTotals[category] += price; 
+    } else {
+      categoryTotals[category] = price;
+    }
+  }
+  const result = Object.entries(categoryTotals).map(([category, totalAmount]) => ({
+    [category]: totalAmount
+  }));
+
+  console.log(result);
+  return result;
+  // console.log(categoryTotals)
+  // return [];
+}
+let t1={
+  itemName:"bike",
+  category:"transport",
+  price:1000   
+}
+let t2={
+  itemName:"car",
+  category:"transport",
+  price:2000   
+}
+let t3={
+  itemName:"vegetable",
+  category:"food",
+  price:1000    
+}
+transactions = [t1,t2,t3]
+calculateTotalSpentByCategory(transactions)
 module.exports = calculateTotalSpentByCategory;
