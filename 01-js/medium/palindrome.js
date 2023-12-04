@@ -9,7 +9,7 @@
 function isPalindrome(str) {
   var left=0
   var right=str.length-1
- 
+  
   while(left < right) {
     if(str[left]!==str[right]){
         return false
@@ -17,7 +17,7 @@ function isPalindrome(str) {
     left++;
     right--;
   }
-  
+ 
   return true;
 }
 str=isPalindrome("1991")

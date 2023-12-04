@@ -7,6 +7,29 @@ Try running it for
 Hint - use Date class exposed in JS
 */
 
+// function calculateTime(n) {
+//     return 0.01;
+// }
 function calculateTime(n) {
-    return 0.01;
+    // Record the start time
+    const startTime = new Date().getTime();
+
+    // Your actual code to calculate the sum from 1 to n goes here
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+
+    // Record the end time
+    const endTime = new Date().getTime();
+
+    // Calculate the time difference in seconds
+    const elapsedTimeInSeconds = (endTime - startTime) / 1000;
+
+    return elapsedTimeInSeconds;
 }
+
+// Example usage:
+console.log("Time taken for sum from 1 to 100:", calculateTime(100), "seconds");
+console.log("Time taken for sum from 1 to 100000:", calculateTime(100000), "seconds");
+console.log("Time taken for sum from 1 to 1000000000:", calculateTime(1000000000), "seconds");
